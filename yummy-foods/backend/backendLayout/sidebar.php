@@ -40,9 +40,9 @@
          </div>
      </li>
      <li class="nav-item">
-        <a href="./manageBanner.php" class="nav-link">
+        <a href="./categories.php" class="nav-link">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Manage Banner</span>
+            <span>Manage Category</span>
         </a>
     </li>
 
