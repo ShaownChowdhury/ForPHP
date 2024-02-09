@@ -1,6 +1,8 @@
 <?php
 include_once "../backend/backendLayout/header.php";
 
+$query = "SELECT * FROM categories WHERE status=true";
+
 ?>
 <section>
     <div class="container">
