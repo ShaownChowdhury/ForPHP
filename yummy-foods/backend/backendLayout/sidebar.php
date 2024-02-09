@@ -39,12 +39,28 @@
              </div>
          </div>
      </li>
+     <!-- CATEGORY -->
      <li class="nav-item">
         <a href="./categories.php" class="nav-link">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Manage Category</span>
         </a>
     </li>
+     <!-- CATEGORY END -->
+    <!--FOODS  -->
+    <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#food" aria-expanded="true" aria-controls="collapseTwo">
+             <i class="fas fa-fw fa-cog"></i>
+             <span>Foods</span>
+         </a>
+         <div id="food" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
 
+                 <a class="collapse-item" href="./addFood.php">Add Food</a>
+                 <a class="collapse-item" hreF="./allfoods.php">All Foods</a>
+             </div>
+         </div>
+     </li>
+     <!-- FOODS END -->
  </ul>
  <!-- End of Sidebar -->
