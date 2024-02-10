@@ -1,7 +1,12 @@
 <?php
 include_once "../backend/backendLayout/header.php";
+include "../database/env.php";
 
 $query = "SELECT * FROM categories WHERE status=true";
+$res = mysqli_query($conn,$query);
+$categories = mysqli_fetch_all($res,1);
+
+// print_r($categories);
 
 ?>
 <section>
@@ -9,7 +14,7 @@ $query = "SELECT * FROM categories WHERE status=true";
         <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="card">
-                   <div class="card-header">Banner info</div>
+                   <div class="card-header">Food info</div>
                    <div class="card-body">
                    <form enctype="multipart/form-data" action="../controller/foodStore.php" method="POST">  
                      <div class="row">
@@ -27,6 +32,16 @@ $query = "SELECT * FROM categories WHERE status=true";
                                    
                                    <select name="category" id="" class="form-control my-3">
                                     <option disabled selected>Select an category</option>
+                                     
+                                   <?php 
+                                    foreach($categories as $category ){
+                                    ?>
+
+                                    <option value="<?=$category['category_title'] ?>"><?=ucwords($category['category_title'])?></option>
+                                    
+                                    <?php
+                                    }
+                                   ?> 
                                    </select>
 
                                    <button name="store_btn" type="submit" class="btn btn-primary">Submit</button>
