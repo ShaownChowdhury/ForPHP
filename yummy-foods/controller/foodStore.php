@@ -1,8 +1,10 @@
 <?php
 session_start();
+include "../database/env.php";
 
 $foodImage = $_FILES['food_img'];
 $title = $_REQUEST['title'];
+$category = $_REQUEST['category'];
 $detail = $_REQUEST['detail'];
 $price = $_REQUEST['price'];
 $extension = pathinfo($foodImage['name'])['extension'] ?? null ;
@@ -34,6 +36,17 @@ if(count($errors)>0){
   
     // move upload image
     $upload = move_uploaded_file($foodImage['tmp_name'],"$path/$imageName");
+
+    // database 
+    if($upload){
+        $query = "INSERT INTO foods(category, title, detail, price, food_image) VALUES ('$category','$title','$detail','$price','$imageName')";
+        $res = mysqli_query($conn,$query);
+        
+        // if($res){
+        //     header("location:../backend/addFood.php");
+        // }
+        $res && header("location:../backend/addFood.php");
+    }
     
     }
 
