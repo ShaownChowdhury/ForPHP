@@ -7,9 +7,9 @@ $query = "SELECT * FROM banners WHERE id=$id";
 $test = mysqli_query($conn,$query);
 $res = mysqli_fetch_assoc($test);
 
-echo "<pre>";
-print_r($res);
-echo "</pre>";
+// echo "<pre>";
+// print_r($res);
+// echo "</pre>";
 
 // exit();
 
@@ -37,13 +37,13 @@ echo "</pre>";
                                    <span class="text-danger">
                                            <?= $_SESSION['errors']['title_error'] ?? '' ?>
                                        </span>
-                                   <textarea name="details" class="form-control my-3" placeholder="Enter Banner Details"></textarea>
+                                   <textarea value="<?=$res['details'] ?>" name="details" class="form-control my-3" placeholder="Enter Banner Details"></textarea>
                                    <span class="text-danger">
                                            <?= $_SESSION['errors']['detail_error'] ?? '' ?>
                                        </span>
-                                   <input type="text" class="form-control my-3" name="btn_title" placeholder="Enter Banner Button Title">
-                                   <input type="text" class="form-control my-3" name="btn_link" placeholder="Enter Banner Button Link">
-                                   <input type="text" class="form-control my-3" name="video_url" placeholder="Enter Video URL">
+                                   <input value="<?=$res['button_title'] ?>" type="text" class="form-control my-3" name="btn_title" placeholder="Enter Banner Button Title">
+                                   <input value="<?=$res['button_link']?? "" ?>" type="text" class="form-control my-3" name="btn_link" placeholder="Enter Banner Button Link">
+                                   <input value="<?=$res['video_url'] ?>" type="text" class="form-control my-3" name="video_url" placeholder="Enter Video URL">
 
                                    <button name="store_btn" type="submit" class="btn btn-primary">Submit</button>
                                </div>

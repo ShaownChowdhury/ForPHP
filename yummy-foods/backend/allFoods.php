@@ -28,6 +28,7 @@ $foods = mysqli_fetch_all($foodRes,1);
                         <th>Food image</th>
                         <th>Detail</th>
                         <th>Price</th>
+                        <th>Action</th>
                         
                         
                       </tr>
@@ -43,7 +44,12 @@ $foods = mysqli_fetch_all($foodRes,1);
                             </td>
                             <td><?= $food['detail'] ?></td>
                             <td><?= $food['price'] ?> Taka Only</td>
-                            
+                            <td>
+                                <div class="btn-group">
+                                    <a href="./editFood.php?id=<?=$food['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="../controller/deleteFood.php?id=<?=$food['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </td>
                            </tr>
                         <?php    
                         }

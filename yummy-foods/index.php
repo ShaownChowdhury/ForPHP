@@ -292,7 +292,7 @@ include_once "./frontendLayouts/header.php";
                 <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="./uploads/food/<?=$food['food_image'] ?>" class="menu-img img-fluid" alt=""></a>
                 <h4><?=$food['title'] ?? '' ?></h4>
                 <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
+                <?=$food['title'] ?? '' ?> is a famous item for <?=$category['category_title']?>.Hope you will enjoy it 😊
                 </p>
                 <p class="price">
                 <?=$food['price'] ?? '' ?> Taka
