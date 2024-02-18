@@ -4,9 +4,9 @@
 class Car{
     //property
     //access modifier
-    public $carName;
-    public $speed = 'normal';
-    public $type = 'normal';
+    // public $carName;
+    // public $speed = 'normal';
+    // public $type = 'normal';
     
      
     // magic methods
@@ -14,9 +14,11 @@ class Car{
     // function __construct()
     // {
     //     echo "I am running first <br>";
-    function __construct($carName,$speed,$type)
+    function __construct(public $carName,public $speed,public $type)
     {
-        
+        // $this->carName = $carName;
+        // $this->speed = $speed;
+        // $this->type = $type;
     }
     // }
     // function __destruct()
