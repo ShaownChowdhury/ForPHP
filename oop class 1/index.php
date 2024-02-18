@@ -53,8 +53,10 @@ $tesla->goingForward();
 
 $tesla->goingBackward();
 
-$tesla->getCarType('quick');
+$tesla->getCarType();
 
+$tesla->color = "black";
+echo $tesla->color;
 
 
 
