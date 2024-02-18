@@ -5,34 +5,59 @@ class Car{
     //property
     //access modifier
     public $carName;
+    public $speed = 'normal';
+    public $type = 'normal';
+    
+     
+    // magic methods
+    // contruct methods
+    // function __construct()
+    // {
+    //     echo "I am running first <br>";
+    function __construct($carName,$speed,$type)
+    {
+        
+    }
+    // }
+    // function __destruct()
+    // {
+    //     echo "I am running last <br>";
+    // }
 
     // methods
-    function goingForward($carName,$speed = 'normal'){
-        echo "The $carName is going $speed <br>";
+    function goingForward(){
+        echo "The $this->carName is going $this->speed <br>";
     }
-    function goingBackward($carName){
-        echo "The $carName is going Backward <br>";
+    function goingBackward(){
+        echo "The $this->carName is going Backward <br>";
     }
-    function getCarType($type){
-        echo "The carName is $type <br>";
+    function getCarType(){
+        echo "The $this->carName is $this->type <br>";
     }
+
 }
 
-$tesla = new Car;
+$tesla = new Car('tesla x10','200km','electric');
 // print_r($tesla);
-$tesla-> goingForward('Tesla','very fast');
 
-$tesla->carName='teslas';
-echo $tesla->carName;
+$tesla->carName='Tesla 500';
 
-$tesla-> goingBackward('Tesla');
+$tesla->goingForward();
+
+$tesla->goingBackward();
+
+$tesla->getCarType('quick');
 
 
-$toyota = new Car;
 
-$toyota-> goingForward('toyota','fastly');
 
-$toyota-> goingBackward('Toyota');
+// $toyota = new Car;
+
+// $toyota->carName='Special toyota';
+
+// $toyota-> goingForward();
+
+// $toyota-> goingBackward();
 
 
 
