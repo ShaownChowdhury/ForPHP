@@ -14,7 +14,12 @@ class Car{
     // function __construct()
     // {
     //     echo "I am running first <br>";
-    function __construct(public $carName,public $speed,public $type)
+    function __construct(
+        public string $carName,
+        public string $speed,
+        public string $type,
+        private string $color
+        )
     {
         // $this->carName = $carName;
         // $this->speed = $speed;
@@ -39,10 +44,10 @@ class Car{
 
 }
 
-$tesla = new Car('tesla x10','200km','electric');
+$tesla = new Car('tesla x10','200km','electric','color');
 // print_r($tesla);
 
-$tesla->carName='Tesla 500';
+$tesla->carName;
 
 $tesla->goingForward();
 
