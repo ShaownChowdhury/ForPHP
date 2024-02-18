@@ -18,7 +18,7 @@ class Car{
         public string $carName,
         public string $speed,
         public string $type,
-        private string $color
+        protected string $color
         )
     {
         // $this->carName = $carName;
@@ -41,22 +41,36 @@ class Car{
     function getCarType(){
         echo "The $this->carName is $this->type <br>";
     }
+    function getCarColor(){
+        echo "The $this->carName is $this->color <br>";
+    }
 
 }
 
-$tesla = new Car('tesla x10','200km','electric','color');
-// print_r($tesla);
+class SuperCar extends Car{
+    function getColor(){
+      echo $this->color;
+    }
+}
 
-$tesla->carName;
+$ferari = new SuperCar('ferari x33','500km','electric','green');
+$ferari ->goingForward();
+$ferari ->goingBackward();
+$ferari ->getCarColor();
 
-$tesla->goingForward();
+echo $ferari->getColor();
+// $tesla = new Car('tesla x10','200km','electric','color');
+// // print_r($tesla);
 
-$tesla->goingBackward();
+// $tesla->carName;
 
-$tesla->getCarType();
+// $tesla->goingForward();
 
-$tesla->color = "black";
-echo $tesla->color;
+// $tesla->goingBackward();
+
+// $tesla->getCarType();
+
+
 
 
 
